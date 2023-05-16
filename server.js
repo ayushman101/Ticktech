@@ -1,19 +1,34 @@
 const http = require('http');
 require('dotenv').config();
 
+const os=require('os');
+
 const { createProxyServer } = require('http-proxy');
 
-// Backend server instances
-const backendServers = [
-  { host: 'localhost', port: 3001 },
-  { host: 'localhost', port: 3002 },
-  { host: 'localhost', port: 3003 },
-  { host: 'localhost', port: 3004 },
-  { host: 'localhost', port: 3005 },
-  { host: 'localhost', port: 3006 },
-  { host: 'localhost', port: 3007 },
+const CPUs=os.cpus().length-1;
 
-];
+let backendServers=[];
+
+for(let i=0;i<CPUs;i++)
+{
+    let server={host: 'localhost', port: parseInt(process.env.PORT)+1+i}
+    backendServers.push(server);
+
+}
+
+console.log(backendServers);
+
+// Backend server instances
+// const backendServers = [
+//   { host: 'localhost', port: 3001 },
+//   { host: 'localhost', port: 3002 },
+//   { host: 'localhost', port: 3003 },
+//   { host: 'localhost', port: 3004 },
+//   { host: 'localhost', port: 3005 },
+//   { host: 'localhost', port: 3006 },
+//   { host: 'localhost', port: 3007 },
+
+// ];
 
 // Initialize the load balancer
 const proxy = createProxyServer();
