@@ -1,5 +1,7 @@
 # Ticktech
 
+`Using MongoDB locally as Database`
+
 # Running the Application
 
 1. Setup MongoDB locally. Write the connection string in the .env file. (If database query doesn't work, Try replacing `localhost` to `127.0.0.1` in the connection String.
