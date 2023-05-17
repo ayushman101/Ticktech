@@ -40,7 +40,7 @@ else if(cluster.worker.id===1)
     
     for(let i=1;i<CPUs;i++)
     {
-        let server={host: 'localhost', port: parseInt(port)+i}
+        let server={host: 'localhost', port: parseInt(port)+i+1}
         backendServers.push(server);
     
     }
