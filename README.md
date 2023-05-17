@@ -7,9 +7,8 @@
 1. Setup MongoDB locally. Write the connection string in the .env file. (If database query doesn't work, Try replacing `localhost` to `127.0.0.1` in the connection String.
 2. In case you want to setup the DB on Mongo Atlas, just change the connection string in .env file.
 3. Run `npm install` to install all the dependencies
-4. Run `npm start` to start the server OR You can also use step 5.
-5. Run `npm start:multi` to start cluster mode for running worker threads. (or User Step 4)
-6. Go through the following for each endpoint:
+4. Run `npm start` or `npm run start:dev` or `npm or start:multi` to start the server.
+5. Go through the following for each endpoint:
     a. `api/v1/users`:  Method: GET
                         body: None
                         resonse: An array of all the Users
@@ -45,10 +44,10 @@
     
 # Load Balancing:
         
-        The npm script  `start:dev`  starts server.js file which creates a PROXY SERVER acting as a LOAD BALANCER.
-        This server redirects incoming requests to CLUSTER WORKER THREADS using Round Robin Algorithm.
+        The npm script  `start`  starts app.js file which creates a PROXY SERVER acting as a LOAD BALANCER on the first worker Thread of cluster pool.
+        This server redirects incoming requests to  rest of CLUSTER WORKER THREADS using Round Robin Algorithm.
         
-        REFER TO LINE 33 IN SERVER.JS FILE FOR  ROUND ROBIN ALGO.
+        REFER TO LINE 78 IN APP.JS FILE FOR  ROUND ROBIN ALGO.
         
         
 # CLUSTER :
