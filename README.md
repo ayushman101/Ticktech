@@ -7,8 +7,8 @@
 1. Setup MongoDB locally. Write the connection string in the .env file. (If database query doesn't work, Try replacing `localhost` to `127.0.0.1` in the connection String.
 2. In case you want to setup the DB on Mongo Atlas, just change the connection string in .env file.
 3. Run `npm install` to install all the dependencies
-4. Run `npm start:dev` to start the server. But this primary server is just for redirecting incoming request to other instances (Load Balancing)
-5. Run `npm start:multi` to start cluster mode for running worker threads.
+4. Run `npm start` to start the server OR You can also use step 5.
+5. Run `npm start:multi` to start cluster mode for running worker threads. (or User Step 4)
 6. Go through the following for each endpoint:
     a. `api/v1/users`:  Method: GET
                         body: None
