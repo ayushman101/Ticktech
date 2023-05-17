@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js app.js",
+    "start": "nodemon app.js",
     "start:dev": "nodemon server.js",
     "start:multi":"nodemon app.js"
 
