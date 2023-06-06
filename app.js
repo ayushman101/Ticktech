@@ -1,6 +1,6 @@
 const express=require('express');
 const connectDB=require('./db/connect');
-const cluster=require('cluster');
+const cluster=require('node:cluster');
 require('dotenv').config();
 
 const os=require('os');
