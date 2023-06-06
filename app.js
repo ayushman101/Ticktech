@@ -40,7 +40,7 @@ else if(cluster.Worker.id===1)
     
     for(let i=1;i<CPUs;i++)
     {
-        let server={host: 'localhost', port: parseInt(port)+i+1}
+        let server={host: 'ticktech.onrender.com', port: parseInt(port)+i+1}
         backendServers.push(server);
     
     }
@@ -106,7 +106,7 @@ else
             await connectDB(process.env.MONGO_URI);
     
             
-            app.listen(parseInt(port)+addtoport,console.log(`Server is listening on port ${parseInt(port)+addtoport} on worker thread : ${cluster.worker.id}`));
+            app.listen(parseInt(port)+addtoport,console.log(`Server is listening on port ${parseInt(port)+addtoport} on worker thread : ${cluster.Worker.id}`));
     
         } catch (error) {
             console.log(error);
