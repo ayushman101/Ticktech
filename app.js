@@ -1,6 +1,6 @@
 const express=require('express');
 const connectDB=require('./db/connect');
-const cluster=require('node:cluster');
+const cluster=require('cluster');
 require('dotenv').config();
 
 const os=require('os');
@@ -27,7 +27,7 @@ if(cluster.isPrimary){
 
 }
 
-else if(cluster.worker.id===1)
+else if(cluster.Worker.id===1)
 {
 
     const http = require('http');
